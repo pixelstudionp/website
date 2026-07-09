@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services | Pixel Studios — Wedding Photography &amp; Beyond</title>
+<meta name="description" content="Pixel Studios — wedding photography and beyond. Capturing love and joy.">
+<link rel="icon" href="./icon0.png">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          primary: '#f7f3eb',
+          secondary: '#d23f36',
+          tertiary: '#36302a',
+          quaternary: '#b9a590',
+        },
+        fontFamily: { display: ['"Playfair Display"', 'serif'], logo: ['"Great Vibes"', 'cursive'] },
+      }
+    }
+  }
+</script>
+<link rel="stylesheet" href="./css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js" defer></script>
+</head>
+<body class="bg-primary text-tertiary font-serif antialiased">
+
+<!-- ================= NAVBAR ================= -->
+<nav id="navbar" class="nav-gradient fixed top-0 inset-x-0 z-50" x-data="{ mobileMenu:false, mPackages:false, mServices:false }">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="flex items-center justify-between h-20">
+      <a href="index.html" class="flex items-center gap-3 group shrink-0">
+        <span class="text-2xl md:text-3xl text-primary font-logo whitespace-nowrap">Pixel Studios</span>
+      </a>
+
+      <!-- Desktop nav -->
+      <div class="hidden lg:flex items-center gap-8 text-[0.95rem] tracking-wide text-tertiary">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+
+        <div class="relative group py-3 -my-3">
+          <a href="packages.html">
+            <button class="nav-link flex items-center gap-1">
+            Packages
+            <svg class="w-3.5 h-3.5 mt-px transition-transform duration-300 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          </a>
+          <div class="absolute left-1/2 -translate-x-1/2 top-full w-60 pt-3 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300">
+            <div class="bg-primary border border-quaternary/30 rounded-xl shadow-xl overflow-hidden py-2">
+                <a href="packages.html#pkg-wedding" class="dropdown-link">Wedding Photography</a>
+                <a href="packages.html#pkg-portrait" class="dropdown-link">Portrait Photography</a>
+                <a href="packages.html#pkg-newborn" class="dropdown-link">Newborn Photography</a>
+                <a href="packages.html#pkg-event" class="dropdown-link">Event Photography</a>
+                <a href="packages.html#pkg-corporate" class="dropdown-link">Corporate Photography</a>
+                <a href="packages.html#pkg-product" class="dropdown-link">Product Photography</a>
+                <a href="packages.html" class="dropdown-link">More...</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative group py-3 -my-3">
+          <a href="services.html">
+            <button class="nav-link active flex items-center gap-1">
+                Services
+                <svg class="w-3.5 h-3.5 mt-px transition-transform duration-300 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+          </a>
+          <div class="absolute left-1/2 -translate-x-1/2 top-full w-52 pt-3 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300">
+            <div class="bg-primary border border-quaternary/30 rounded-xl shadow-xl overflow-hidden py-2">
+              <a href="services.html#srv-photography" class="dropdown-link">Photography</a>
+              <a href="services.html#srv-videography" class="dropdown-link">Videography</a>
+              <a href="services.html#srv-graphics" class="dropdown-link">Graphics Designing</a>
+              <a href="services.html#srv-flex" class="dropdown-link">Flex Printing</a>
+              <a href="services.html#srv-advertisement" class="dropdown-link">Advertisement</a>
+              <a href="services.html" class="dropdown-link">More...</a>
+            </div>
+          </div>
+        </div>
+
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="contact.html" class="btn-fill px-6 py-2.5 rounded-full text-sm tracking-wide">Book Now</a>
+      </div>
+
+      <!-- Mobile hamburger -->
+      <button @click="mobileMenu = !mobileMenu" class="lg:hidden text-primary p-2 -mr-2" aria-label="Toggle Menu">
+        <svg x-show="!mobileMenu" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"/></svg>
+        <svg x-show="mobileMenu" x-cloak class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile panel -->
+  <div x-show="mobileMenu" x-cloak x-transition class="lg:hidden bg-primary border-t border-quaternary/30 shadow-xl max-h-[85vh] overflow-y-auto">
+    <div class="px-6 py-5 flex flex-col text-tertiary">
+      <a href="index.html" class="py-3 border-b border-quaternary/20">Home</a>
+      <a href="about.html" class="py-3 border-b border-quaternary/20">About</a>
+
+      <button @click="mPackages = !mPackages" class="py-3 border-b border-quaternary/20 flex items-center justify-between w-full text-left">
+        Packages
+        <svg class="w-4 h-4 transition-transform duration-300" :class="mPackages && 'rotate-180'" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </button>
+      <div x-show="mPackages" x-cloak x-transition class="flex flex-col pl-4 bg-quaternary/10 rounded-lg">
+        <a href="packages.html#pkg-wedding" class="py-2.5 text-sm text-tertiary/80">Wedding Photography</a>
+        <a href="packages.html#pkg-portrait" class="py-2.5 text-sm text-tertiary/80">Portrait Photography</a>
+        <a href="packages.html#pkg-newborn" class="py-2.5 text-sm text-tertiary/80">Newborn Photography</a>
+        <a href="packages.html#pkg-event" class="py-2.5 text-sm text-tertiary/80">Event Photography</a>
+        <a href="packages.html#pkg-corporate" class="py-2.5 text-sm text-tertiary/80">Corporate Photography</a>
+        <a href="packages.html#pkg-product" class="py-2.5 text-sm text-tertiary/80">Product Photography</a>
+        <a href="packages.html" class="py-2.5 text-sm text-tertiary/80">More...</a>
+      </div>
+
+      <button @click="mServices = !mServices" class="py-3 border-b border-quaternary/20 flex items-center justify-between w-full text-secondary text-left">
+        Services
+        <svg class="w-4 h-4 transition-transform duration-300" :class="mServices && 'rotate-180'" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </button>
+      <div x-show="mServices" x-cloak x-transition class="flex flex-col pl-4 bg-quaternary/10 rounded-lg">
+        <a href="services.html#srv-photography" class="py-2.5 text-sm text-tertiary/80">Photography</a>
+        <a href="services.html#srv-videography" class="py-2.5 text-sm text-tertiary/80">Videography</a>
+        <a href="services.html#srv-graphics" class="py-2.5 text-sm text-tertiary/80">Graphics Designing</a>
+        <a href="services.html#srv-flex" class="py-2.5 text-sm text-tertiary/80">Flex Printing</a>
+        <a href="services.html#srv-advertisement" class="py-2.5 text-sm text-tertiary/80">Advertisement</a>
+        <a href="services.html" class="py-2.5 text-sm text-tertiary/80">More...</a>
+      </div>
+
+      <a href="gallery.html" class="py-3 border-b border-quaternary/20">Gallery</a>
+      <a href="contact.html" class="py-3 border-b border-quaternary/20">Contact</a>
+      <a href="contact.html" class="btn-fill text-center rounded-full py-3 mt-4">Book Now</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HEADER ================= -->
+<section class="pt-32 md:pt-40 pb-14 md:pb-16 bg-primary text-center">
+  <div class="max-w-3xl mx-auto px-5" data-animate="fade">
+    <span class="eyebrow justify-center">What We Offer</span>
+    <h1 class="text-4xl md:text-5xl lg:text-[3.3rem] leading-[1.15] mt-4 mb-6 text-tertiary">Our Services</h1>
+    <p class="text-tertiary/80 leading-relaxed">From the first getting-ready shot to the last dance, we cover every hour and every angle — then hand it back to you as photographs, films and albums built to last generations.</p>
+  </div>
+</section>
+
+<!-- ================= SERVICE 01 — PHOTOGRAPHY ================= -->
+<section id="srv-photography" class="py-16 md:py-20 bg-primary scroll-mt-24">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+    <div class="relative frame-corners order-1" data-animate="left">
+      <span class="fc-tr"></span><span class="fc-bl"></span>
+      <img src="./images/services1.webp" alt="Wedding photography" class="w-full h-[380px] md:h-[540px] object-cover rounded-2xl shadow-xl">
+    </div>
+    <div class="order-2 relative" data-animate="right">
+      <div class="relative">
+        <p class="eyebrow mb-4">Service 01</p>
+        <h2 class="text-3xl md:text-4xl text-tertiary mb-4">Photography</h2>
+        <p class="text-tertiary/80 leading-relaxed mb-6">From weddings to products, we shoot it all with a sharp eye for detail and emotion, using professional gear to make sure every frame is one worth keeping.</p>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-center gap-3 text-tertiary/85"><svg class="w-5 h-5 text-secondary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Professional high-resolution cameras</li>
+          <li class="flex items-center gap-3 text-tertiary/85"><svg class="w-5 h-5 text-secondary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Indoor and outdoor shoot capability</li>
+          <li class="flex items-center gap-3 text-tertiary/85"><svg class="w-5 h-5 text-secondary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Skilled, experienced photographers</li>
+          <li class="flex items-center gap-3 text-tertiary/85"><svg class="w-5 h-5 text-secondary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Fast, edited delivery</li>
+        </ul>
+        <a href="contact.html" class="btn-fill inline-block px-8 py-3.5 rounded-full">Enquire Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICE 02 — Videography ================= -->
+<section id="srv-videography" class="py-16 md:py-20 bg-quaternary/15 scroll-mt-24">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+    <div class="order-2 md:order-1 relative" data-animate="left">
+      <div class="relative">
+        <p class="eyebrow mb-4">Service 02</p>
+        <h2 class="text-3xl md:text-4xl text-tertiary mb-4">Videography</h2>
+        <p class="text-tertiary/80 leading-relaxed mb-6">Cinematic films that let you relive your biggest moments rather than just look back at them, complete with drone shots, sound, and color grading that give it a true movie feel.</p>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-center gap-3 text-tertiary/85"><svg class="w-5 h-5 text-secondary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Full HD/cinematic video coverage</li>
+          <li class="flex items-center gap-3 text-tertiary/85"><svg class="w-5 h-5 text-secondary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Drone aerial footage</li>
+          <li class="flex items-center gap-3 text-tertiary/85"><svg class="w-5 h-5 text-secondary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Highlight reels and full-length films</li>
+          <li class="flex items-center gap-3 text-tertiary/85"><svg class="w-5 h-5 text-secondary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Professional color grading and editing</li>
+        </ul>
+        <a href="contact.html" class="btn-fill inline-block px-8 py-3.5 rounded-full">Enquire Now</a>
+      </div>
+    </div>
+    <div class="relative frame-corners order-1 md:order-2" data-animate="right">
+      <span class="fc-tr"></span><span class="fc-bl"></span>
+      <img src="./images/services2.webp" alt="Wedding cinematography" class="w-full h-[380px] md:h-[540px] object-cover rounded-2xl shadow-xl">
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICE 03 — Graphic Designing ================= -->
+<section id="srv-graphics" class="py-16 md:py-20 bg-primary scroll-mt-24">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+    <div class="relative frame-corners order-1" data-animate="left">
+      <span class="fc-tr"></span><span class="fc-bl"></span>
+      <img src="./images/services3.webp" alt="Wedding photography" class="w-full h-[380px] md:h-[540px] object-cover rounded-2xl shadow-xl">
+    </div>
+    <div class="order-2 relative" data-animate="right">
+      <div class="relative">
+        <p class="eyebrow mb-4">Service 03</p>
+        <h2 class="text-3xl md:text-4xl text-tertiary mb-4">Graphic Designing</h2>
+        <p class="text-tertiary/80 leading-relaxed mb-6">Custom visual design for personal and business needs alike, from wedding invitations to full branding materials, all designed to match how you want to be seen.</p>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-center gap-3 text-tertiary/85"><svg class="w-5 h-5 text-secondary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Wedding invitation and card design</li>
+          <li class="flex items-center gap-3 text-tertiary/85"><svg class="w-5 h-5 text-secondary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Logos, posters, and banners</li>
+          <li class="flex items-center gap-3 text-tertiary/85"><svg class="w-5 h-5 text-secondary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Social media creative design</li>
+          <li class="flex items-center gap-3 text-tertiary/85"><svg class="w-5 h-5 text-secondary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Print-ready and digital formats</li>
+        </ul>
+        <a href="contact.html" class="btn-fill inline-block px-8 py-3.5 rounded-full">Enquire Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICE 04 — Flex Printing ================= -->
+<section id="srv-flex" class="py-16 md:py-20 bg-quaternary/15 scroll-mt-24">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+    <div class="order-2 md:order-1 relative" data-animate="left">
+      <div class="relative">
+        <p class="eyebrow mb-4">Service 03</p>
+        <h2 class="text-3xl md:text-4xl text-tertiary mb-4">Flex Printing</h2>
+        <p class="text-tertiary/80 leading-relaxed mb-6">High-quality large-format printing for banners, hoardings, and event signage, built to hold up outdoors while still looking sharp from a distance.</p>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-center gap-3 text-tertiary/85"><svg class="w-5 h-5 text-secondary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Wedding and event flex banners</li>
+          <li class="flex items-center gap-3 text-tertiary/85"><svg class="w-5 h-5 text-secondary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Business signage and hoardings</li>
+          <li class="flex items-center gap-3 text-tertiary/85"><svg class="w-5 h-5 text-secondary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Durable, weather-resistant prints</li>
+          <li class="flex items-center gap-3 text-tertiary/85"><svg class="w-5 h-5 text-secondary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Custom sizes available</li>
+        </ul>
+        <a href="contact.html" class="btn-fill inline-block px-8 py-3.5 rounded-full">Enquire Now</a>
+      </div>
+    </div>
+    <div class="relative frame-corners order-1 md:order-2" data-animate="right">
+      <span class="fc-tr"></span><span class="fc-bl"></span>
+      <img src="./images/services4.webp" alt="Wedding cinematography" class="w-full h-[380px] md:h-[540px] object-cover rounded-2xl shadow-xl">
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICE 05 — Album Printing ================= -->
+<section id="srv-album" class="py-16 md:py-20 bg-primary scroll-mt-24">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+    <div class="relative frame-corners order-1" data-animate="left">
+      <span class="fc-tr"></span><span class="fc-bl"></span>
+      <img src="./images/services5.webp" alt="Wedding photography" class="w-full h-[380px] md:h-[540px] object-cover rounded-2xl shadow-xl">
+    </div>
+    <div class="order-2 relative" data-animate="right">
+      <div class="relative">
+        <p class="eyebrow mb-4">Service 05</p>
+        <h2 class="text-3xl md:text-4xl text-tertiary mb-4">Album Printing</h2>
+        <p class="text-tertiary/80 leading-relaxed mb-6">Beautifully designed, premium-quality albums that hold your memories long-term, so your favorite moments live somewhere more lasting than just a phone gallery.</p>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-center gap-3 text-tertiary/85"><svg class="w-5 h-5 text-secondary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Custom album design</li>
+          <li class="flex items-center gap-3 text-tertiary/85"><svg class="w-5 h-5 text-secondary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Premium print quality and binding</li>
+          <li class="flex items-center gap-3 text-tertiary/85"><svg class="w-5 h-5 text-secondary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Multiple size and cover options</li>
+          <li class="flex items-center gap-3 text-tertiary/85"><svg class="w-5 h-5 text-secondary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Designed by our in-house team</li>
+        </ul>
+        <a href="contact.html" class="btn-fill inline-block px-8 py-3.5 rounded-full">Enquire Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICE 06 — Advertisement ================= -->
+<section id="srv-advertisement" class="py-16 md:py-20 bg-quaternary/15 scroll-mt-24">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+    <div class="order-2 md:order-1 relative" data-animate="left">
+      <div class="relative">
+        <p class="eyebrow mb-4">Service 06</p>
+        <h2 class="text-3xl md:text-4xl text-tertiary mb-4">Advertisement</h2>
+        <p class="text-tertiary/80 leading-relaxed mb-6">Visual advertising support to help individuals and businesses get noticed, combining design and photography to create ads that actually catch attention.</p>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-center gap-3 text-tertiary/85"><svg class="w-5 h-5 text-secondary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Print and digital ad design</li>
+          <li class="flex items-center gap-3 text-tertiary/85"><svg class="w-5 h-5 text-secondary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Banner and poster advertisements</li>
+          <li class="flex items-center gap-3 text-tertiary/85"><svg class="w-5 h-5 text-secondary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Photography/videography for ad content</li>
+          <li class="flex items-center gap-3 text-tertiary/85"><svg class="w-5 h-5 text-secondary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Concept-to-print service</li>
+        </ul>
+        <a href="contact.html" class="btn-fill inline-block px-8 py-3.5 rounded-full">Enquire Now</a>
+      </div>
+    </div>
+    <div class="relative frame-corners order-1 md:order-2" data-animate="right">
+      <span class="fc-tr"></span><span class="fc-bl"></span>
+      <img src="./images/services6.webp" alt="Wedding cinematography" class="w-full h-[380px] md:h-[540px] object-cover rounded-2xl shadow-xl">
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICE 07 — Technical Support ================= -->
+<section id="srv-technical" class="py-16 md:py-20 bg-primary scroll-mt-24">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+    <div class="relative frame-corners order-1" data-animate="left">
+      <span class="fc-tr"></span><span class="fc-bl"></span>
+      <img src="./images/services7.webp" alt="Wedding photography" class="w-full h-[380px] md:h-[540px] object-cover rounded-2xl shadow-xl">
+    </div>
+    <div class="order-2 relative" data-animate="right">
+      <div class="relative">
+        <p class="eyebrow mb-4">Service 07</p>
+        <h2 class="text-3xl md:text-4xl text-tertiary mb-4">Technical Support</h2>
+        <p class="text-tertiary/80 leading-relaxed mb-6">Reliable technical assistance for photography and related hardware, so you're not left stuck when something needs fixing or setting up correctly.</p>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-center gap-3 text-tertiary/85"><svg class="w-5 h-5 text-secondary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Camera and equipment troubleshooting</li>
+          <li class="flex items-center gap-3 text-tertiary/85"><svg class="w-5 h-5 text-secondary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Setup and configuration support</li>
+          <li class="flex items-center gap-3 text-tertiary/85"><svg class="w-5 h-5 text-secondary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>On-call assistance for events</li>
+          <li class="flex items-center gap-3 text-tertiary/85"><svg class="w-5 h-5 text-secondary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Honest, practical guidance</li>
+        </ul>
+        <a href="contact.html" class="btn-fill inline-block px-8 py-3.5 rounded-full">Enquire Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICE 08 — Sales & Services ================= -->
+<section id="srv-sales" class="py-16 md:py-20 bg-quaternary/15 scroll-mt-24">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+    <div class="order-2 md:order-1 relative" data-animate="left">
+      <div class="relative">
+        <p class="eyebrow mb-4">Service 08</p>
+        <h2 class="text-3xl md:text-4xl text-tertiary mb-4">Sales & Services</h2>
+        <p class="text-tertiary/80 leading-relaxed mb-6">Sourcing and support for photography and printing-related hardware, helping you find the right equipment and keep it running smoothly over time.</p>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-center gap-3 text-tertiary/85"><svg class="w-5 h-5 text-secondary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Camera and accessory sales</li>
+          <li class="flex items-center gap-3 text-tertiary/85"><svg class="w-5 h-5 text-secondary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Printing equipment support</li>
+          <li class="flex items-center gap-3 text-tertiary/85"><svg class="w-5 h-5 text-secondary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Maintenance and servicing</li>
+          <li class="flex items-center gap-3 text-tertiary/85"><svg class="w-5 h-5 text-secondary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Advice on the right gear for your needs</li>
+        </ul>
+        <a href="contact.html" class="btn-fill inline-block px-8 py-3.5 rounded-full">Enquire Now</a>
+      </div>
+    </div>
+    <div class="relative frame-corners order-1 md:order-2" data-animate="right">
+      <span class="fc-tr"></span><span class="fc-bl"></span>
+      <img src="./images/services8.webp" alt="Wedding cinematography" class="w-full h-[380px] md:h-[540px] object-cover rounded-2xl shadow-xl">
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA BANNER ================= -->
+<section class="py-20 md:py-24 bg-quaternary text-primary text-center">
+  <div class="max-w-2xl mx-auto px-5" data-animate="fade">
+    <h2 class="text-3xl md:text-4xl lg:text-5xl mb-5">Ready to Capture Your Story?</h2>
+    <p class="text-primary/80 leading-relaxed mb-9">Mix and match any of these services, or let one of our packages bundle them together at a better price.</p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="contact.html" class="btn-fill px-8 py-3.5 rounded-full">Book Now</a>
+      <a href="packages.html" class="btn-outline px-8 py-3.5 rounded-full">View Packages</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-tertiary text-quaternary">
+  <div class="max-w-7xl mx-auto px-6 md:px-10 py-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
+    <div>
+      <a href="index.html" class="flex items-center gap-3 mb-5">
+        <span class="text-3xl font-logo">Pixel Studios</span>
+      </a>
+      <p class="text-primary/85 text-sm leading-relaxed mb-6">We capture the quiet glances and loud laughter of your big day, turning fleeting moments into timeless frames.</p>
+      <p class="uppercase tracking-widest text-[11px] mb-3 text-primary/70">Connect With Us</p>
+      <div class="flex gap-3">
+        <a href="https://www.facebook.com/pixelstudio.gramthan" aria-label="Facebook" class="w-10 h-10 rounded-full bg-primary/15 hover:bg-secondary flex items-center justify-center transition-colors"><svg class="w-4.5 h-4.5 w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5h2.5l.5-3h-3V8.5c0-.9.3-1.5 1.6-1.5H16.5V4.2C16.2 4.2 15.2 4 14 4c-2.4 0-4 1.5-4 4.2V10.5H7.5v3H10V21h3.5z"/></svg></a>
+        <a href="#" aria-label="Instagram" class="w-10 h-10 rounded-full bg-primary/15 hover:bg-secondary flex items-center justify-center transition-colors"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".9" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://www.youtube.com/@studiopixel" aria-label="YouTube" class="w-10 h-10 rounded-full bg-primary/15 hover:bg-secondary flex items-center justify-center transition-colors"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M22 8.5s-.2-1.6-.8-2.3c-.8-.8-1.6-.8-2-.9C16.4 5 12 5 12 5s-4.4 0-7.2.3c-.4 0-1.2.1-2 .9C2.2 6.9 2 8.5 2 8.5S1.8 10.4 1.8 12.3v1.4c0 1.9.2 3.8.2 3.8s.2 1.6.8 2.3c.8.8 1.9.8 2.4.9 1.7.2 7.3.3 7.3.3s4.4 0 7.2-.3c.4 0 1.2-.1 2-.9.6-.7.8-2.3.8-2.3s.2-1.9.2-3.8v-1.4c0-1.9-.2-3.8-.2-3.8zM9.9 15.5v-6l5.6 3-5.6 3z"/></svg></a>
+        <a href="https://www.tiktok.com/@pixel_studio0" aria-label="TikTok" class="w-10 h-10 rounded-full bg-primary/15 hover:bg-secondary flex items-center justify-center transition-colors"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c.4 2.3 2 4 4.5 4.2v2.9c-1.5 0-2.9-.5-4-1.3v6.7c0 3.1-2.5 5.5-5.6 5.5S5.8 18.6 5.8 15.5c0-3 2.3-5.4 5.3-5.5v3c-1.3.1-2.3 1.2-2.3 2.5 0 1.4 1.1 2.5 2.5 2.5s2.6-1.1 2.6-2.5V3h2.6z"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <p class="text-lg mb-5">Quick Links</p>
+      <ul class="space-y-3 text-sm text-primary/85">
+        <li><a href="index.html" class="hover:text-secondary transition-colors">Home</a></li>
+        <li><a href="about.html" class="hover:text-secondary transition-colors">About</a></li>
+        <li><a href="packages.html" class="hover:text-secondary transition-colors">Packages</a></li>
+        <li><a href="services.html" class="hover:text-secondary transition-colors">Services</a></li>
+        <li><a href="gallery.html" class="hover:text-secondary transition-colors">Gallery</a></li>
+        <li><a href="contact.html" class="hover:text-secondary transition-colors">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="text-lg mb-5">Our Services</p>
+      <ul class="space-y-3 text-sm text-primary/85">
+        <li><a href="services.html#srv-photography" class="hover:text-secondary transition-colors">Photography</a></li>
+        <li><a href="services.html#srv-videography" class="hover:text-secondary transition-colors">Videography</a></li>
+        <li><a href="services.html#srv-graphics" class="hover:text-secondary transition-colors">Graphics Designing</a></li>
+        <li><a href="services.html#srv-flex" class="hover:text-secondary transition-colors">Flex Printing</a></li>
+        <li><a href="services.html#srv-advertisement" class="hover:text-secondary transition-colors">Advertisement</a></li>
+        <li><a href="services.html" class="hover:text-secondary transition-colors">and more...</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="flex items-center gap-3 mb-5">
+        <span class="text-2xl">Pixel Studio Pvt. Ltd.</span>
+      </div>
+      <p class="text-primary/85 text-sm leading-relaxed">Gramthan 5, Tetariya, Morang, Nepal</p>
+      <p class="text-primary/85 text-sm leading-relaxed font-sans">+977-9817332929, +977-9824320527</p>
+      <p class="text-primary/85 text-sm leading-relaxed">pixelstudio.gramthan@gmail.com</p>
+    </div>
+  </div>
+  <div class="border-t border-primary/20 py-6 text-center text-xs text-primary/70">&copy; 2026 Pixel Studio. All Rights Reserved.</div>
+</footer>
+
+<!-- ============ WHATSAPP FLOATING BUTTON ============ -->
+<a href="https://wa.me/9779817332929" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" class="fixed bottom-6 right-6 z-50 w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#25D366] flex items-center justify-center shadow-xl pulse-ring hover:scale-110 transition-transform">
+  <svg viewBox="0 0 32 32" class="w-7 h-7 md:w-8 md:h-8 fill-white"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.837.744 5.5 2.04 7.805L0 32l8.4-2.04A15.9 15.9 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm8.19 22.61c-.343.966-1.972 1.84-2.72 1.95-.703.104-1.588.148-2.56-.16-.59-.19-1.35-.44-2.33-.86-4.1-1.77-6.78-5.9-6.99-6.18-.2-.28-1.67-2.22-1.67-4.23 0-2.01 1.05-3 1.43-3.41.37-.4.81-.5 1.08-.5.27 0 .54 0 .77.01.25.01.58-.09.9.69.34.82 1.16 2.83 1.26 3.03.1.2.17.44.03.71-.13.27-.2.44-.4.68-.2.24-.42.53-.6.71-.2.2-.41.42-.18.82.24.4 1.06 1.75 2.27 2.83 1.56 1.39 2.88 1.82 3.28 2.02.4.2.63.17.86-.1.24-.27 1.02-1.19 1.29-1.6.27-.4.55-.34.92-.2.37.13 2.36 1.11 2.77 1.31.4.2.67.3.77.47.1.17.1.98-.24 1.94z"/></svg>
+</a>
+
+<script src="./js/script.js"></script>
+</body>
+</html>
