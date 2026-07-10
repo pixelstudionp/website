@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gallery | Pixel Studios — Wedding Photography &amp; Beyond</title>
-<meta name="description" content="Pixel Studios — wedding photography and beyond. Capturing love and joy.">
+<title>Downloads — Pixel Studios</title>
+<meta name="description" content="Download your full-resolution wedding album from Pixel Studios.">
 <link rel="icon" href="./icon0.png">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
@@ -33,7 +33,7 @@
   <div class="max-w-7xl mx-auto px-5 md:px-8">
     <div class="flex items-center justify-between h-20">
       <a href="index.html" class="flex items-center gap-3 group shrink-0">
-        <span class="text-2xl md:text-3xl text-primary font-logo whitespace-nowrap">Pixel Studios</span>
+        <img src="./images/logo4.png" alt="Bride and groom portrait" class="w-[200px]">
       </a>
 
       <!-- Desktop nav -->
@@ -80,8 +80,8 @@
           </div>
         </div>
 
-        <a href="gallery.html" class="nav-link active">Gallery</a>
-        <a href="downloads.html" class="nav-link">Downloads</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="downloads.html" class="nav-link active">Downloads</a>
         <a href="contact.html" class="nav-link">Contact</a>
         <a href="contact.html" class="btn-fill px-6 py-2.5 rounded-full text-sm tracking-wide">Book Now</a>
       </div>
@@ -127,35 +127,36 @@
         <a href="services.html" class="py-2.5 text-sm text-tertiary/80">More...</a>
       </div>
 
-      <a href="gallery.html" class="py-3 border-b border-quaternary/20 text-secondary">Gallery</a>
-      <a href="downloads.html" class="py-3 border-b border-quaternary/20">Downloads</a>
+      <a href="gallery.html" class="py-3 border-b border-quaternary/20">Gallery</a>
+      <a href="downloads.html" class="py-3 border-b border-quaternary/20 text-secondary">Downloads</a>
       <a href="contact.html" class="py-3 border-b border-quaternary/20">Contact</a>
       <a href="contact.html" class="btn-fill text-center rounded-full py-3 mt-4">Book Now</a>
     </div>
   </div>
 </nav>
 
-<!-- ============ TITLE ============ -->
-<section class="bg-primary pt-32 md:pt-40 pb-14 md:pb-16 text-center px-6">
-  <p class="eyebrow justify-center mb-5" data-animate>Our Portfolio</p>
-  <h1 class="text-4xl sm:text-5xl md:text-6xl leading-tight" data-animate>Stories in Frames</h1>
+<!-- ============ PAGE HEADER ============ -->
+<section id="downloads-hero" class="bg-quaternary/20 pt-36 pb-16 md:pt-44 md:pb-20 px-6">
+  <div class="max-w-3xl mx-auto text-center" data-animate>
+    <p class="eyebrow justify-center mb-4">Client Portal</p>
+    <h1 class="text-4xl sm:text-5xl md:text-6xl leading-tight mb-5">Download Your<br><span class="italic">Wedding Album</span></h1>
+    <p class="text-tertiary/75 leading-relaxed max-w-xl mx-auto">Your favourite memories, ready to keep forever. Find your event below and download the full-resolution gallery in one click.</p>
+  </div>
 </section>
 
-<!-- ============ GALLERY GRID ============ -->
-<section class="bg-primary pb-24 md:pb-32 px-2 sm:px-4" x-data="{ lightbox:false, activeImg:'' }">
-  <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-1.5 sm:gap-2">
-    <template x-for="(img, i) in Array.from({length:24}, (_, i) => './images/gallery' + (i+1) + '.webp')" :key="i">
-      <div class="frame-corners frame-corners-dark relative cursor-pointer overflow-hidden" @click="lightbox=true; activeImg=img">
-        <span class="fc-tr"></span><span class="fc-bl"></span>
-        <img :src="img" class="w-full aspect-square object-cover hover:scale-110 transition-transform duration-500" alt="Wedding gallery photo">
-      </div>
-    </template>
+<!-- ============ DOWNLOADS GRID ============ -->
+<section id="downloads-grid-section" class="bg-primary py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-6 md:px-10">
+    <p id="downloads-status" class="text-center text-tertiary/60 py-10">Loading albums&hellip;</p>
+    <div id="downloads-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"></div>
   </div>
+</section>
 
-  <div x-show="lightbox" x-cloak x-transition.opacity @keydown.escape.window="lightbox=false" class="fixed inset-0 z-[100] bg-tertiary/92 backdrop-blur-sm flex items-center justify-center p-6" @click.self="lightbox=false">
-    <button @click="lightbox=false" aria-label="Close" class="absolute top-6 right-6 text-primary text-4xl leading-none hover:text-secondary transition-colors">&times;</button>
-    <img :src="activeImg" class="max-h-[88vh] max-w-[92vw] rounded-lg shadow-2xl object-contain" alt="Full size wedding photo">
-  </div>
+<!-- ============ STILL HAVE QUESTIONS ============ -->
+<section class="bg-primary pb-24 md:pb-32 pt-4 text-center px-6" data-animate>
+  <h3 class="text-3xl md:text-4xl mb-4">Can&rsquo;t Find Your Album?</h3>
+  <p class="text-tertiary/75 max-w-xl mx-auto mb-8">If your gallery isn&rsquo;t listed yet or a link isn&rsquo;t working, reach out and we&rsquo;ll sort it out right away.</p>
+  <a href="contact.html" class="btn-fill inline-block px-10 py-4 rounded-full font-medium">Contact Us</a>
 </section>
 
 <!-- ============ FOOTER ============ -->
@@ -201,6 +202,7 @@
       <div class="flex items-center gap-3 mb-5">
         <span class="text-2xl">Pixel Studio Pvt. Ltd.</span>
       </div>
+      <img src="./images/logo4.png" alt="Bride and groom portrait" class="w-[200px] mb-5">
       <p class="text-primary/85 text-sm leading-relaxed">Gramthan 5, Tetariya, Morang, Nepal</p>
       <p class="text-primary/85 text-sm leading-relaxed font-sans">+977-9817332929, +977-9824320527</p>
       <p class="text-primary/85 text-sm leading-relaxed">pixelstudio.gramthan@gmail.com</p>
@@ -215,5 +217,6 @@
 </a>
 
 <script src="./js/script.js"></script>
+<script src="./js/downloads.js"></script>
 </body>
 </html>
