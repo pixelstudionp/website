@@ -133,6 +133,7 @@ html,body{
 [data-delay="2"]{ transition-delay:0.24s; }
 [data-delay="3"]{ transition-delay:0.36s; }
 [data-delay="4"]{ transition-delay:0.48s; }
+[data-delay="5"]{ transition-delay:0.60s; }
 
 /* ---------- 3D ring/wheel gallery carousel ---------- */
 /* Cells are planted at equal angles around a circle (JS sets each one's

@@ -32,8 +32,7 @@
   <div class="max-w-7xl mx-auto px-5 md:px-8">
     <div class="flex items-center justify-between h-20">
       <a href="index.html" class="flex items-center gap-3 group shrink-0">
-        <!--<span class="text-2xl md:text-3xl text-primary font-logo whitespace-nowrap">Pixel Studios</span>-->
-        <img src="./images/logo5.png" alt="Bride and groom portrait" class="w-[200px]">
+        <span class="text-2xl md:text-3xl text-primary font-logo whitespace-nowrap">Pixel Studios</span>
       </a>
 
       <!-- Desktop nav -->
@@ -140,7 +139,7 @@
   <div class="max-w-7xl mx-auto px-5 md:px-8 grid md:grid-cols-2 gap-14 md:gap-16 items-center">
     <div class="relative frame-corners" data-animate="left">
       <span class="fc-tr"></span><span class="fc-bl"></span>
-      <img src="./images/about01.webp" alt="Wedding couple portrait" class="w-full h-[380px] md:h-[540px] object-cover rounded-2xl shadow-2xl">
+      <img src="./images/about1.webp" alt="Wedding couple portrait" class="w-full h-[380px] md:h-[540px] object-cover rounded-2xl shadow-2xl">
       <div class="absolute -bottom-6 -right-4 md:-right-10 bg-secondary text-primary rounded-2xl px-6 py-4 shadow-xl hidden sm:block float-anim">
         <p class="text-3xl font-semibold leading-none">5+</p>
         <p class="text-xs tracking-widest uppercase mt-1">Years of Stories</p>
@@ -263,38 +262,61 @@
       <span class="eyebrow justify-center">Meet The Storytellers</span>
       <h2 class="text-3xl md:text-4xl lg:text-5xl mt-4 text-tertiary">The Team</h2>
     </div>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
 
-      <div class="text-center" data-animate="fade" data-delay="1">
+    <div class="flex flex-wrap justify-center gap-6 sm:gap-8">
+
+      <!-- Item 1 -->
+      <div class="w-[calc(50%-0.75rem)] sm:w-[calc(33.333%-1.333rem)] lg:w-[calc(20%-1.6rem)] text-center" data-animate="fade" data-delay="1">
         <div class="team-photo-wrap rounded-2xl mb-4 aspect-[3/4] shadow-lg">
-          <img src="./images/about02.webp" class="w-full h-full object-cover rounded-2xl" alt="Aria Bennett">
+          <img src="./images/team1.webp" class="w-full h-full object-cover rounded-2xl" alt="Aria Bennett">
         </div>
         <h3 class="text-lg text-tertiary">Sanant Dhami</h3>
-        <p class="text-xs tracking-widest uppercase text-secondary mt-1">Founder</p>
+        <p class="text-xs tracking-widest uppercase text-secondary mt-1">Founder <br>& Creative Director</p>
       </div>
 
-      <div class="text-center" data-animate="fade" data-delay="2">
+      <!-- break: mobile only, forces item1 onto its own row -->
+      <div class="w-full h-0 sm:hidden" aria-hidden="true"></div>
+
+      <!-- Item 2 -->
+      <div class="w-[calc(50%-0.75rem)] sm:w-[calc(33.333%-1.333rem)] lg:w-[calc(20%-1.6rem)] text-center" data-animate="fade" data-delay="2">
         <div class="team-photo-wrap rounded-2xl mb-4 aspect-[3/4] shadow-lg">
-          <img src="./images/about03.webp" class="w-full h-full object-cover rounded-2xl" alt="Rohan Mehta">
+          <img src="./images/team2.webp" class="w-full h-full object-cover rounded-2xl" alt="Rohan Mehta">
         </div>
         <h3 class="text-lg text-tertiary">Nawesh Kha</h3>
-        <p class="text-xs tracking-widest uppercase text-secondary mt-1">Lead Photographer</p>
+        <p class="text-xs tracking-widest uppercase text-secondary mt-1">Co-founder<br>& Lead Photographer</p>
       </div>
 
-      <div class="text-center" data-animate="fade" data-delay="3">
+      <!-- break: mid-size only (sm to lg), forces items 1+2 onto row 1 -->
+      <div class="hidden sm:block lg:hidden w-full h-0" aria-hidden="true"></div>
+
+      <!-- Item 3 -->
+      <div class="w-[calc(50%-0.75rem)] sm:w-[calc(33.333%-1.333rem)] lg:w-[calc(20%-1.6rem)] text-center" data-animate="fade" data-delay="3">
         <div class="team-photo-wrap rounded-2xl mb-4 aspect-[3/4] shadow-lg">
-          <img src="https://picsum.photos/seed/knots-team-elena/420/560" class="w-full h-full object-cover rounded-2xl" alt="Elena Cruz">
+          <img src="./images/team3.webp" class="w-full h-full object-cover rounded-2xl" alt="Elena Cruz">
         </div>
-        <h3 class="text-lg text-tertiary">Elena Cruz</h3>
-        <p class="text-xs tracking-widest uppercase text-secondary mt-1">Creative Director</p>
+        <h3 class="text-lg text-tertiary">Prajwal Khan</h3>
+        <p class="text-xs tracking-widest uppercase text-secondary mt-1">Lead Cinematographer</p>
       </div>
 
-      <div class="text-center" data-animate="fade" data-delay="4">
+      <!-- break: mobile only, forces items 2+3 onto row 2 -->
+      <div class="w-full h-0 sm:hidden" aria-hidden="true"></div>
+
+      <!-- Item 4 -->
+      <div class="w-[calc(50%-0.75rem)] sm:w-[calc(33.333%-1.333rem)] lg:w-[calc(20%-1.6rem)] text-center" data-animate="fade" data-delay="4">
         <div class="team-photo-wrap rounded-2xl mb-4 aspect-[3/4] shadow-lg">
-          <img src="https://picsum.photos/seed/knots-team-kabir/420/560" class="w-full h-full object-cover rounded-2xl" alt="Kabir Anand">
+          <img src="./images/team4.webp" class="w-full h-full object-cover rounded-2xl" alt="Kabir Anand">
         </div>
-        <h3 class="text-lg text-tertiary">Kabir Anand</h3>
-        <p class="text-xs tracking-widest uppercase text-secondary mt-1">Drone Pilot</p>
+        <h3 class="text-lg text-tertiary">Roshan Chaudhary</h3>
+        <p class="text-xs tracking-widest uppercase text-secondary mt-1">Lead Videographer</p>
+      </div>
+
+      <!-- Item 5 -->
+      <div class="w-[calc(50%-0.75rem)] sm:w-[calc(33.333%-1.333rem)] lg:w-[calc(20%-1.6rem)] text-center" data-animate="fade" data-delay="5">
+        <div class="team-photo-wrap rounded-2xl mb-4 aspect-[3/4] shadow-lg">
+          <img src="./images/team5.webp" class="w-full h-full object-cover rounded-2xl" alt="Kabir Anand">
+        </div>
+        <h3 class="text-lg text-tertiary">Biken Majhi</h3>
+        <p class="text-xs tracking-widest uppercase text-secondary mt-1">Drone Operator</p>
       </div>
 
     </div>
@@ -393,7 +415,7 @@
       <div class="flex items-center gap-3 mb-5">
         <span class="text-2xl">Pixel Studio Pvt. Ltd.</span>
       </div>
-      <img src="./images/logo5.png" alt="Bride and groom portrait" class="w-[200px] mb-5">
+      <img src="./images/logo1.png" alt="Bride and groom portrait" class="w-[220px] mb-5">
       <p class="text-primary/85 text-sm leading-relaxed">Gramthan 5, Tetariya, Morang, Nepal</p>
       <p class="text-primary/85 text-sm leading-relaxed font-sans">+977-9817332929, +977-9824320527</p>
       <p class="text-primary/85 text-sm leading-relaxed">pixelstudio.gramthan@gmail.com</p>
