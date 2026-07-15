@@ -318,65 +318,75 @@
           <span class="shrink-0 w-9 h-9 rounded-full border border-tertiary/40 flex items-center justify-center text-xl transition-all duration-300" :class="active === 0 ? 'rotate-45 bg-secondary text-primary border-secondary' : ''">+</span>
         </button>
         <div x-show="active === 0" x-collapse>
-        <p class="text-tertiary/75 leading-relaxed pt-4 pr-12">We recommend booking at least 2–3 months ahead of your wedding date, especially during peak wedding seasons, to make sure our team is available. For destination or long-distance weddings, earlier booking helps us plan logistics smoothly.</p>
-        <p class="text-tertiary/75 leading-relaxed pt-4 pr-12">हामी तपाईंको विवाहको मितिभन्दा कम्तीमा २–३ महिना अगाडि बुकिङ गर्न सिफारिस गर्छौं, विशेष गरी विवाहको व्यस्त सिजनमा, ताकि हाम्रो टोली उपलब्ध रहोस्। गन्तव्य (Destination) वा टाढाको स्थानमा हुने विवाहका लागि अझै पहिले नै बुकिङ गर्दा यात्रा तथा अन्य व्यवस्थापन सहज रूपमा गर्न मद्दत हुन्छ।</p>
+        <p class="text-tertiary/75 leading-relaxed pt-4 pr-12">We recommend booking at least 1 month ahead of your wedding date, especially during peak wedding seasons, to make sure our team is available. For destination or long-distance weddings, earlier booking helps us plan logistics smoothly.</p>
+        <p class="text-tertiary/75 leading-relaxed pt-4 pr-12">हामी तपाईंको विवाहको मितिभन्दा कम्तीमा १ महिना अगाडि बुकिङ गर्न सिफारिस गर्छौं, विशेष गरी विवाहको व्यस्त सिजनमा, ताकि हाम्रो टोली उपलब्ध रहोस्। गन्तव्य (Destination) वा टाढाको स्थानमा हुने विवाहका लागि अझै पहिले नै बुकिङ गर्दा यात्रा तथा अन्य व्यवस्थापन सहज रूपमा गर्न मद्दत हुन्छ।</p>
         </div>
       </div>
 
       <div class="py-5">
         <button @click="active === 1 ? active = null : active = 1" class="w-full flex items-center justify-between gap-6 text-left">
-          <span class="faq-question text-lg md:text-xl pr-4">Do you travel for destination weddings?</span>
+          <span class="faq-question text-lg md:text-xl pr-4">How much does it cost for wedding photography?</span>
           <span class="shrink-0 w-9 h-9 rounded-full border border-tertiary/40 flex items-center justify-center text-xl transition-all duration-300" :class="active === 1 ? 'rotate-45 bg-secondary text-primary border-secondary' : ''">+</span>
         </button>
-        <div x-show="active === 1" x-collapse><p class="text-tertiary/75 leading-relaxed pt-4 pr-12">Yes. While we mainly serve Morang, Sunsari, and nearby areas, we're glad to travel farther for the right event. Just share your location with us in advance so we can plan travel and accommodation accordingly.</p></div>
+        <div x-show="active === 1" x-collapse>
+          <p class="text-tertiary/75 leading-relaxed pt-4 pr-12">Pricing depends on coverage duration, package type, and any add-ons like drone footage or albums. We keep our rates budget-friendly, and we're happy to discuss a quote once we understand your event details. Reach out and we'll walk you through it.</p>
+          <p class="text-tertiary/75 leading-relaxed pt-4 pr-12">विवाह फोटोग्राफीको लागत कभरेजको अवधि, छनोट गरिएको प्याकेज, र ड्रोन फुटेज वा एल्बमजस्ता अतिरिक्त सेवाहरूमा निर्भर हुन्छ। हामी सधैं बजेटमैत्री दरहरू प्रदान गर्ने प्रयास गर्छौं। तपाईंको कार्यक्रमको विवरण बुझिसकेपछि हामी उपयुक्त कोटेसन उपलब्ध गराउँछौं। थप जानकारीका लागि हामीलाई सम्पर्क गर्नुहोस्, हामी सबै विकल्पहरू विस्तारमा बुझाउन खुशी हुनेछौं।</p>
+        </div>
       </div>
 
       <div class="py-5">
         <button @click="active === 2 ? active = null : active = 2" class="w-full flex items-center justify-between gap-6 text-left">
-          <span class="faq-question text-lg md:text-xl pr-4">How long until we receive our photos?</span>
+          <span class="faq-question text-lg md:text-xl pr-4">Do you provide both photography and videography together?</span>
           <span class="shrink-0 w-9 h-9 rounded-full border border-tertiary/40 flex items-center justify-center text-xl transition-all duration-300" :class="active === 2 ? 'rotate-45 bg-secondary text-primary border-secondary' : ''">+</span>
         </button>
-        <div x-show="active === 2" x-collapse><p class="text-tertiary/75 leading-relaxed pt-4 pr-12">Turnaround time depends on the package and season, but we work to deliver edited photos and highlights as quickly as possible without compromising quality. Usually, a sneak peek arrives within 48 hours, and your fully edited gallery is delivered within 4&ndash;6 weeks.</p></div>
+        <div x-show="active === 2" x-collapse>
+          <p class="text-tertiary/75 leading-relaxed pt-4 pr-12">Yes, we offer end-to-end photography and videography, so you can book both as a combined package for full coverage of your day.</p>
+          <p class="text-tertiary/75 leading-relaxed pt-4 pr-12">हो, हामी फोटोग्राफी र भिडियोग्राफी दुवै सेवा एकै प्याकेजमा पनि उपलब्ध गराउँछौं। यसले तपाईंको विवाहका सबै विशेष क्षणहरू सम्पूर्ण रूपमा कैद हुने सुनिश्चित गर्छ। तपाईंको आवश्यकता अनुसार संयुक्त प्याकेज छनोट गरेर सम्पूर्ण दिनको कभरेज प्राप्त गर्न सक्नुहुन्छ।</p>
+        </div>
       </div>
 
       <div class="py-5">
         <button @click="active === 3 ? active = null : active = 3" class="w-full flex items-center justify-between gap-6 text-left">
-          <span class="faq-question text-lg md:text-xl pr-4">Can we customize a package?</span>
+          <span class="faq-question text-lg md:text-xl pr-4">Do you use drones for aerial shots?</span>
           <span class="shrink-0 w-9 h-9 rounded-full border border-tertiary/40 flex items-center justify-center text-xl transition-all duration-300" :class="active === 3 ? 'rotate-45 bg-secondary text-primary border-secondary' : ''">+</span>
         </button>
-        <div x-show="active === 3" x-collapse><p class="text-tertiary/75 leading-relaxed pt-4 pr-12">Absolutely. If none of our set packages fit exactly what you need, our Customized Photography option lets us build coverage, hours, and add-ons around your specific event and budget.</p></div>
+        <div x-show="active === 3" x-collapse>
+          <p class="text-tertiary/75 leading-relaxed pt-4 pr-12">Yes, we have professional drones for aerial photography and videography, subject to venue permissions and local flying regulations.</p>
+          <p class="text-tertiary/75 leading-relaxed pt-4 pr-12">हो, हामीसँग ड्रोन उपलब्ध छन्, जसमार्फत आकर्षक एरियल फोटोग्राफी र भिडियोग्राफी गर्न सकिन्छ। ड्रोनको प्रयोग भने विवाहस्थलको अनुमति तथा स्थानीय उडानसम्बन्धी नियमहरूको पालना गर्दै गरिन्छ।</p>
+        </div>
       </div>
 
       <div class="py-5">
         <button @click="active === 4 ? active = null : active = 4" class="w-full flex items-center justify-between gap-6 text-left">
-          <span class="faq-question text-lg md:text-xl pr-4">How much does it cost for wedding photography?</span>
+          <span class="faq-question text-lg md:text-xl pr-4">How long until we receive our photos?</span>
           <span class="shrink-0 w-9 h-9 rounded-full border border-tertiary/40 flex items-center justify-center text-xl transition-all duration-300" :class="active === 4 ? 'rotate-45 bg-secondary text-primary border-secondary' : ''">+</span>
         </button>
-        <div x-show="active === 4" x-collapse><p class="text-tertiary/75 leading-relaxed pt-4 pr-12">Pricing depends on coverage duration, package type, and any add-ons like drone footage or albums. We keep our rates budget-friendly, and we're happy to discuss a quote once we understand your event details — reach out and we'll walk you through it.</p></div>
+        <div x-show="active === 4" x-collapse>
+          <p class="text-tertiary/75 leading-relaxed pt-4 pr-12">Turnaround time depends on the package and season, but we work to deliver edited photos and highlights as quickly as possible without compromising quality. Usually, a sneak peek arrives within 48 hours, and your fully edited gallery is delivered within 4–6 weeks.</p>
+          <p class="text-tertiary/75 leading-relaxed pt-4 pr-12">फोटो तथा भिडियो तयार हुने समय छनोट गरिएको प्याकेज र विवाहको सिजनअनुसार फरक हुन सक्छ। तर, गुणस्तरमा कुनै सम्झौता नगरी सकेसम्म छिटो सम्पादन गरिएको सामग्री उपलब्ध गराउने हाम्रो प्रयास रहन्छ। सामान्यतया, विवाहको ४८ घण्टाभित्र केही झलक (Sneak Peek) फोटोहरू उपलब्ध गराइन्छन्, भने सम्पूर्ण सम्पादन गरिएको ग्यालरी ४–६ हप्ताभित्र प्रदान गरिन्छ। यदि तपाईंलाई छिटो आवश्यक छ भने, अनुरोधअनुसार अझ चाँडो उपलब्ध गराउने व्यवस्था पनि मिलाउन सकिन्छ।</p>
+        </div>
       </div>
 
       <div class="py-5">
         <button @click="active === 5 ? active = null : active = 5" class="w-full flex items-center justify-between gap-6 text-left">
-          <span class="faq-question text-lg md:text-xl pr-4">What happens if it rains on our wedding day?</span>
+          <span class="faq-question text-lg md:text-xl pr-4">Do you travel for destination weddings?</span>
           <span class="shrink-0 w-9 h-9 rounded-full border border-tertiary/40 flex items-center justify-center text-xl transition-all duration-300" :class="active === 5 ? 'rotate-45 bg-secondary text-primary border-secondary' : ''">+</span>
         </button>
-        <div x-show="active === 5" x-collapse><p class="text-tertiary/75 leading-relaxed pt-4 pr-12">We come prepared. Our team carries protective gear for cameras and equipment, and we adapt our shot plan to make the most of indoor settings, covered areas, or a rain-check reschedule for outdoor segments if needed.</p></div>
+        <div x-show="active === 5" x-collapse>
+          <p class="text-tertiary/75 leading-relaxed pt-4 pr-12">Yes. While we mainly serve Morang, Sunsari, and nearby areas, we're glad to travel farther for the right event. Just share your location with us in advance so we can plan travel and accommodation accordingly.</p>
+          <p class="text-tertiary/75 leading-relaxed pt-4 pr-12">हो। हामी मुख्य रूपमा मोरङ, सुनसरी तथा आसपासका क्षेत्रहरूमा सेवा प्रदान गर्छौं। तर, विशेष अवसरका लागि अन्य जिल्ला वा टाढाका स्थानहरूमा पनि सेवा दिन हामी खुशीसाथ पुग्छौं। यात्रा र आवश्यक परे बसोबासको उचित व्यवस्था मिलाउन, कृपया आफ्नो कार्यक्रमको स्थान समयमै हामीलाई जानकारी गराउनुहोस्।</p>
+        </div>
       </div>
 
       <div class="py-5">
         <button @click="active === 6 ? active = null : active = 6" class="w-full flex items-center justify-between gap-6 text-left">
-          <span class="faq-question text-lg md:text-xl pr-4">Do you provide both photography and videography together?</span>
+          <span class="faq-question text-lg md:text-xl pr-4">Can we customize a package?</span>
           <span class="shrink-0 w-9 h-9 rounded-full border border-tertiary/40 flex items-center justify-center text-xl transition-all duration-300" :class="active === 6 ? 'rotate-45 bg-secondary text-primary border-secondary' : ''">+</span>
         </button>
-        <div x-show="active === 6" x-collapse><p class="text-tertiary/75 leading-relaxed pt-4 pr-12">Yes, we offer end-to-end photography and videography, so you can book both as a combined package for full coverage of your day.</p></div>
-      </div>
-
-      <div class="py-5">
-        <button @click="active === 7 ? active = null : active = 7" class="w-full flex items-center justify-between gap-6 text-left">
-          <span class="faq-question text-lg md:text-xl pr-4">Do you use drones for aerial shots?</span>
-          <span class="shrink-0 w-9 h-9 rounded-full border border-tertiary/40 flex items-center justify-center text-xl transition-all duration-300" :class="active === 7 ? 'rotate-45 bg-secondary text-primary border-secondary' : ''">+</span>
-        </button>
-        <div x-show="active === 7" x-collapse><p class="text-tertiary/75 leading-relaxed pt-4 pr-12">Yes, we have professional drones for aerial photography and videography, subject to venue permissions and local flying regulations.</p></div>
+        <div x-show="active === 6" x-collapse>
+          <p class="text-tertiary/75 leading-relaxed pt-4 pr-12">Absolutely. If none of our set packages fit exactly what you need, our Customized Photography option lets us build coverage, hours, and add-ons around your specific event and budget.</p>
+          <p class="text-tertiary/75 leading-relaxed pt-4 pr-12">अवश्य। यदि हाम्रो कुनै पनि तयार प्याकेज तपाईंको आवश्यकता अनुसार मिल्दैन भने, हाम्रो कस्टमाइज्ड फोटोग्राफी विकल्पमार्फत तपाईंको कार्यक्रम, आवश्यक कभरेज, समयावधि तथा बजेटअनुसार विशेष प्याकेज तयार गर्न सकिन्छ। यसरी तपाईंले आफ्नो आवश्यकता अनुसारको सेवा सहज रूपमा छनोट गर्न सक्नुहुन्छ।</p>
+        </div>
       </div>
 
     </div>
